@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GamePlatform</title>
+    <script src="script.js" defer></script>
+    <!--<link rel="stylesheet" href="style.css">-->
+    
+</head>
+
+<body>
+
+    <h1>Game Platform</h1>
+    
+    <div>
+        <form id="loginForm">
+            <h2>玩家登入</h2>
+            <label>電子郵件</label><br>
+            <input 
+                type="email" 
+                name="email"
+                placeholder="請輸入電子郵件"
+                required><br>
+
+            <label>密碼</label><br>    
+            <input 
+                type="password" 
+                name="password"
+                placeholder="請輸入密碼"
+                required><br>
+            <button type="submit">登入</button>
+        </form>
+    </div>
+    
+    <div>
+        <form id="registerForm">
+            <h2>玩家註冊</h2>
+            <label>玩家名稱</label><br>
+            <input 
+                type="text"
+                name="playerName" 
+                placeholder="請輸入名稱"
+                required>
+                <br>
+
+            <label>電子郵件</label><br>
+            <input 
+                type="email"
+                name="email" 
+                placeholder="請輸入電子郵件"
+                required>
+                <br>
+
+            <label>密碼</label><br>
+            <input 
+                type="password"
+                name="password" 
+                placeholder="請輸入密碼"
+                required>
+                <br>
+            
+            <label>確認密碼</label><br>
+            <input 
+                type="password"
+                name="confirmPassword" 
+                placeholder="請再次輸入密碼"
+                required>
+                <br>
+
+            <label>生日</label><br>
+            <input
+                type="date"
+                name="birthday"
+                required>
+                <br>
+
+            <label>性別</label>
+            <input 
+                type="radio" 
+                name="gender" 
+                value="male">    
+            <label>男</label>
+
+            <input 
+                type="radio" 
+                name="gender" 
+                value="female">
+            <label>女</label>
+
+            <input 
+                type="radio" 
+                name="gender" 
+                value="other">
+            <label>其他</label><br>
+            <button type="submit">註冊</button>
+        </form>
+    </div>
+
+    <h2>熱門遊戲</h2>
+    
+    <a href="">首頁</a>
+    <a href="">遊戲</a>
+    <a href="player.html">個人資料</a>
+
+    <div class="game" id="witcher3">
+        <h3>Witcher 3</h3>
+        <p>RPG</p>
+    </div>
+    
+    <div class="game" id="re4">
+        <h3>Resident Evil 4</h3>
+        <p>恐怖</p>
+    </div>
+    
+    <div class="game" id="spiderman">
+        <h3>Marvel's Spider-Man</h3>
+        <p>動作</p>
+    </div>
+    
+
+</body>
+
+</html>

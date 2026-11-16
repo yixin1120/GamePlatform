@@ -1,0 +1,262 @@
+body{
+    background-color: #512ccb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+section{
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+h1{
+    margin-top: 0;
+    margin: 0 auto 10px;
+    max-width: 1400px;
+}
+
+h2{
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
+
+/*玩家資料區塊*/
+
+.player-data{
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.player-data p{
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.player-data p span:first-child{
+    display: inline-block;
+    font-weight: bold;
+}
+
+/*編輯玩家資料區塊*/
+
+.edit-profile{
+    display: none;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.edit-profile label{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+
+.edit-profile input:focus{
+    border-color: #0018ca;
+    outline: none;
+}
+
+.edit-profile input[type="password"],
+.edit-profile input[type="email"],
+.edit-profile input[type="date"]{
+    width: 250px;
+}
+
+@media(max-width:768px){
+    .edit-profile input[type="password"],
+    .edit-profile input[type="email"],
+    .edit-profile input[type="date"]{
+        width: 100%;
+    }
+}
+
+.basic-info button{
+    margin-top: 5px;
+    background-color: #333;
+    color: white;
+}
+
+/*遊戲庫區塊*/
+
+.game{
+    border: 1px solid #9a7cff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    flex: 1 1 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.game p{
+    margin: 6px 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.game img{
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    display:block;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.game h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    min-height: 48px;
+}
+
+.game-list{
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+@media(max-width:768px){
+    .game-list{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    .game{
+        flex: 0 0 250px;
+    }
+}
+
+.game:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game .last-played{
+    font-size: 14px;
+    color: #184cbd;
+}
+
+/*帳戶設定*/
+
+.security-settings form{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.security-settings form:first-of-type label{
+    display: inline-block;
+    width: 80px;
+}
+
+.security-settings input[type="password"]{
+    width: 250px;
+}
+
+.security-settings input[type="password"]:focus {
+    border-color: #0018ca;
+    outline: none;
+}
+
+.security-settings input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.security-settings button{
+    margin-top: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.security-settings h2 {
+    margin-bottom: 20px;
+}
+
+.security-settings h3{
+    margin-bottom: 10px;
+}
+
+.security-settings h3+ form label{
+    display: block;
+}
+
+.security-settings label{
+    display: block;
+    margin: 2px 0;
+}
+
+/*主要畫面*/
+
+.main-content{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.left-side{
+    flex: 7;
+}
+
+.right-side{
+    flex: 3;
+}
+
+@media(max-width:768px){
+    body{
+        padding: 15px;
+    }
+    .main-content{
+        flex-direction: column;
+    }
+
+    .left-side,
+    .right-side{
+        flex: none;
+        width: 100%;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"]{
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    padding:  8px 6px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}

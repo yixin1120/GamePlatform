@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>個人資料</title>
+    <link rel="stylesheet" href="css/player.css">
+
+
+    <script>
+        if (sessionStorage.getItem("isLoggedIn") !== "true"){
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <script src="player.js" defer></script>
+
+</head>
+
+<body>
+
+<!--遊戲庫-->
+<div class="main-content">
+    <div class="left-side">
+        <section class="game-library">
+            <h2>遊戲庫</h2>
+            <div class="game-list">
+                <div class="game">
+                    <h3>Witcher 3</h3>
+                    <img src="images/Witcher 3.jpg" alt="Witcher 3">
+                    <p>類型:RPG</p>
+                    <p>遊玩時間:30小時</p>
+                    <p>成就:40/78</p>
+                    <p class="last-played">最後遊玩時間:2026/08/02</p>
+                </div>
+
+                <div class="game">
+                    <h3>Resident Evil 4</h3>
+                    <img src="images/Resident Evil 4.jpg" alt="Resident Evil 4">
+                    <p>類型:恐怖</p>
+                    <p>遊玩時間:10小時</p>
+                    <p>成就:25/49</p>
+                    <p class="last-played">最後遊玩時間:2026/07/16</p>
+                </div>
+
+                <div class="game">
+                    <h3>Marvel's Spider-Man</h3>
+                    <img src="images/Marvel's Spider-Man.jpeg" alt="Marvel's Spider-Man">
+                    <p>類型:動作</p>
+                    <p>遊玩時間:30小時</p>
+                    <p>成就:30/51</p>
+                    <p class="last-played">最後遊玩時間:2026/06/03</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<!--基本資料-->
+    <div class="right-side">
+        <section class="basic-info">
+            <h1>玩家基本資料</h1>
+
+            <div class="player-data">
+                <h2>Player001</h2>
+                <p><span>玩家ID:</span><span class="player-id"></span></p>
+                <p><span>電子郵件:</span><span class="player-email"></span></p>
+                <p><span>生日:</span><span class="player-birthday"></span></p>
+                <p><span>性別:</span><span class="gender"></span></p>
+                <p><span>等級:</span><span class="player-level"></span></p>
+            </div>
+            <button id="editProfileButton">修改個人資料</button>
+
+            <div class="edit-profile">
+                <form id="editProfileForm">
+                    <label>玩家名稱</label>
+                    <input 
+                    type="text"
+                    name="playerName"
+                    value="player01"
+                    required>
+                    <br>
+
+                    <label>電子郵件</label>
+                    <input 
+                    type="email"
+                    name="email"
+                    value="player01@gmail.com"
+                    required>
+                    <br>
+
+                    <label>生日</label>
+                    <input
+                    type="date"
+                    name="birthday"
+                    value="2000-01-01"
+                    required>
+                    <br>
+
+                    <label>性別</label>
+                    <input
+                    type="radio"
+                    name="gender"
+                    value="male">
+
+                    <label>男性</label>
+                    <input
+                    type="radio"
+                    name="gender"
+                    value="female">
+
+                    <label>女性</label>
+                    <input 
+                    type="radio"
+                    name="gender"
+                    value="other">
+
+                    <label>其他</label>
+                    <br>
+                    <button type="submit" id="saveChangeButton">儲存修改</button>
+                </form>
+            </div>
+        </section>
+<!--帳戶設定-->
+        <section class="security-settings">
+            <h2>安全性設定</h2>
+                <form id="changePasswordForm">
+                    <label>目前密碼</label>
+                    <input 
+                    type="password"
+                    name="currentPassword"
+                    placeholder="請輸入目前密碼"
+                    required>
+                    <br>
+
+                    <label>輸入新密碼</label>
+                    <input 
+                    type="password"
+                    name="newPassword"
+                    placeholder="輸入新密碼"
+                    required>
+                    <br>
+
+                    <label>確認新密碼</label>
+                    <input
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="再次輸入新密碼"
+                    required>
+                    <br>
+                    <button type="submit">修改密碼</button>
+
+                </form>
+                
+                <h3>通知設定</h3>
+                    <form>
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="gameNotification">
+                            遊戲通知
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="friendNotification">
+                            好友通知
+                        </label>
+                        <br>
+                        <button type="submit">儲存設定</button>
+                    <br>
+                </form> 
+                <br> 
+            <button id="logoutButton" type="button">登出</button>
+        </section>
+    </div>
+</div>
+
+</body>
+
+</html>

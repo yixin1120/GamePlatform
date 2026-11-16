@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# .NET Build
+bin/
+obj/
+
+# Secrets
+appsettings.Development.json
+secrets.json
+
+# Logs
+*.log
