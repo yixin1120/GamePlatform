@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using GamePlatformAPI.Models;
+namespace GamePlatformAPI;
 
 public class GamePlatformContext : DbContext
 {

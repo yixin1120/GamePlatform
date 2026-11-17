@@ -1,8 +1,10 @@
 using System.Net.Mail;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using System.Security.Cryptography;
-using System.ComponentModel.DataAnnotations;
+using GamePlatformAPI.DTOs;
+using GamePlatformAPI.Models;
+using GamePlatformAPI.Services;
+using GamePlatformAPI;
 
 
 public partial class Program
@@ -33,8 +35,6 @@ public partial class Program
         if (app.Environment.IsDevelopment())
         {
             app.MapOpenApi();
-            app.UseAuthentication();
-            app.UseAuthorization();
         }
 
         // 取得玩家資料
@@ -283,77 +283,4 @@ public partial class Program
 
         return new string(id);
     }
-}
-
-//玩家資料Model
-public class PlayerData
-{
-    [MaxLength(50)]
-    public required string PlayerName {get; set;}
-
-    [MaxLength(20)]
-    public required string PlayerId {get; set;}
-
-    [MaxLength(100)]
-    public required string Email {get; set;}
-
-    [MaxLength(100)]
-    public required string Password {get; set;}
-    public required DateOnly Birthday {get; set;}
-
-    [MaxLength(10)]
-    public required string Gender {get; set;}
-    public int Level {get; set;}
-}
-
-//修改玩家資料Model
-public class UpdatePlayerData
-{
-    public required string PlayerName { get; set; }
-    public required string Email { get; set; }
-    public required DateOnly Birthday { get; set; }
-    public required string Gender { get; set; }
-}
-
-//登入資料Model
-public class LoginData
-{
-    public required string Email { get; set; }
-    public required string Password { get; set; }
-}
-
-public class RegisterData{
-    public required string PlayerName { get; set;}
-    public required string Email { get; set;}
-    public required string Password { get; set;}
-    public required DateOnly Birthday { get; set;}
-    public required string Gender { get; set;}
-
-}
-
-//密碼處理工具
-public class PasswordService
-{
-    private readonly PasswordHasher<PlayerData> _hasher = new PasswordHasher<PlayerData>();
-    public string HashPassword(PlayerData player, string password)
-    {
-        return _hasher.HashPassword(player, password);
-    }
-
-    public bool VerifyPassword(PlayerData player, string password)
-    {
-        var result  = _hasher.VerifyHashedPassword(
-            player,
-            player.Password,
-            password
-        );
-        return result  != PasswordVerificationResult.Failed;
-    }
-}
-
-//修改密碼資料Model
-public class ChangePasswordData
-{
-    public required string CurrentPassword { get; set ;}
-    public required string NewPassword { get; set;}
 }

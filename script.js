@@ -33,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
                 sessionStorage.setItem("isLoggedIn","true");
                 sessionStorage.setItem("playerEmail", email);
-
-                alert("登入成功!");
                 window.location.href = "player.html";
 
         }   catch(error){
